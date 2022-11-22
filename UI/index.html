@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <meta charset="utf-8">
+        <title> 강원도 이곳저곳 </title>
+    </head>
+    <style>
+        div
+        {
+            border-style:solid;
+            border-width:1px;
+        }
+        #conditon
+        {
+            width:200px;
+            border:black 2px solid;
+        }
+        #printInfo
+        {
+            width:200px;
+            border: black 2px solid;
+        }
+    </style>
+    <body>
+        <div id = "title"> 
+            <h1> 강원도 이곳저곳 </h1>
+        </div>
+
+        <table id = "contents">
+            <caption> 검색 조건 설정 테이블 </caption>
+            <thead>
+            <tr> 
+                <th>
+                    지역  
+                </th>
+                <th>
+                    정보
+                </th>            
+            </th>
+            </thead>
+
+            <tr>
+                <td>
+                    <div id="conditon">
+                        <select>
+                            <optgroup>시(7)</optgroup>
+                            <option> 춘천시 </option>
+                            <option> 원주시 </option>
+                            <option> 강릉시 </option>
+                            <option> 동해시 </option>
+                            <option> 태백시 </option>
+                            <option> 속초시 </option>
+                            <option> 삼척시 </option>
+    
+                            <optgroup>군(11)</optgroup>
+                            <option> 홍천군 </option>
+                            <option> 횡성군 </option>
+                            <option> 영월군 </option>
+                            <option> 평창군 </option>
+                            <option> 정선군 </option>
+                            <option> 철원군 </option>
+                            <option> 화천군 </option>
+                            <option> 양구군 </option>
+                            <option> 인제군 </option>
+                            <option> 고성군 </option>
+                            <option> 양양군 </option>
+                        </select>
+                        <select>
+                            <optgroup>월</optgroup>
+                            <option> 1월 </option>
+                            <option> 2월 </option>
+                            <option> 3월 </option>
+                            <option> 4월 </option>
+                            <option> 5월 </option>
+                            <option> 6월 </option>
+                            <option> 7월 </option>
+                            <option> 8월 </option>
+                            <option> 9월 </option>
+                            <option> 10월 </option>
+                            <option> 11월 </option>
+                            <option> 12월 </option>
+                        </select>
+                    </div>
+                    <!-- 지도 들어가는 자리 -->
+                    <img src="kangwandoMap.jpg" width="200px" height="200px">
+                </td>
+                <td>
+                   <!-- 캘린더 들어가는 자리-->
+                   <table>
+                    <tr> <th colspan="2">f월 일정</th></tr>
+                    <tr> <td> 0월 0일</td> <td>행사명</td></tr>
+                   </table> 
+                </td>
+            </tr>
+        </table>
+
+
+        <table id="printInfo">
+            <caption> 크롤링 결과 출력 테이블</caption>
+            <thead>
+            <tr> 
+                <th>
+                    지역  
+                </th>
+                <th>
+                    정보
+                </th>            
+            </tr>
+        </thead>
+            <tr>
+                <td>
+                    <!-- world cloud image-->
+                    
+                    <img>
+                </td>
+                <td>
+                    <!-- table show-->
+                </td>
+            </tr>        
+        </table>
+    </body>
+</html>
