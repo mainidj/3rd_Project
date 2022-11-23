@@ -11,12 +11,6 @@
             $('img[usemap]').rwdImageMaps();
             $("#img").width("95%");
         });
-        function local() {
-            var area = document.getElementByArea("area").value;
-            var time = document.getElementByArea("time").value;
-
-            alert("area :" + area + "time :" + time);
-        }
     </script>
     <style>
         @charset "utf-8";
@@ -25,13 +19,7 @@
         {
             font-family:'Nanum Gothic',sans-serif;
         }
-        #title
-        {
-            margin:0 auto;
-            text-align:center;
-            width: 500px;
-            border:black 1px solid;
-        }
+        /*임시*/
         .boxwrap
         {
             margin:0 auto;
@@ -39,16 +27,24 @@
             table-layout:fixed;
             border:black 2px solid;
         }
-        .boxwrap .box 
+        /* 헤더 */
+        #headerAndLogo
         {
-            display:table-cell;
-            vertical-align: middle;
+            margin:0 auto;
+            text-align:center;
+            width: 600px;
+            color: #ffaa1d ;
+            font-size:30px;
+            border: black 1px solid;
         }
         #logoImage
         {
             width:100px;
             height:100px;
         }
+        /* section calendar */
+        
+        /* section imageMap */
         #mapImage
         {
             width:95%;
@@ -59,36 +55,16 @@
             width:600px;
             text-align:center;
         }
-        #conditon
-        {
-            
-        }
-        #printInfo
-        {
-        
-        }
-
     </style>
-    <body>
-        <div id = "title"> 
-            <img src="./image/headLogo.png" id="logoImage">
-            <h1> 강원도 이곳저곳 </h1>
+    <body bgcolor='FFF2CC'>
+        <div id = "headerAndLogo"> 
+            
+            <h1> 강원도 <img src="./image/headLogo.png" id="logoImage"> 이곳저곳 </h1>
         </div>
 
-        <form action="javascript:local();">
+        <form>
+        
         <table id = "search" class="boxwrap">
-            <caption> 검색 조건 설정 테이블 </caption>
-            <thead>
-            <tr> 
-                <th>
-                    지역  
-                </th>
-                <th>
-                    정보
-                </th>            
-            </th>
-            </thead>
-
             <tr>
                 <td>
                     <div id="conditon">
@@ -157,15 +133,15 @@
                     </map>
                 </td>
                 <td>
-                   <!-- 캘린더 들어가는 자리-->
-                   <table>
-                    <tr> <th colspan="2">f월 일정</th></tr>
-                    <tr> <td> 0월 0일</td> <td>행사명</td></tr>
-                   </table> 
+                   <!-- 캘린더 들어가는 자리----------------------->
+                   <!-- 캘린더 끝 -------------------------------->
+                  <!-- 크로링한 월별 행사 데이터 들어가는 자리-->
                 </td>
             </tr>
         </table>
-        <input type="submit" id="butt" alt="전송"/>
+        <input type="submit" value="검색">
+        </form>
+        
 
         <table id="printInfo" class="boxwrap">
             <caption> 크롤링 결과 출력 테이블</caption>
