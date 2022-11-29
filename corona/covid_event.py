@@ -16,8 +16,16 @@ def covid_19() :
     }
     
     response = requests.get(Url,headers=agent_head)
-    soup = BeautifulSoup(response.text, "html.parser")
+    html = response.content.decode('utf-8','replace')
+    soup = BeautifulSoup(html, "html.parser")
     
+    #날짜 크롤링
+    date = soup.select('div.condition>h3>span')
+    date_text = date[0].get_text()
+    date_data = date_text[20:-1]
+    print("날짜 :", date_data)
+    
+    #신규, 누적확진자
     a = soup.select('div.condition>ul>li>span') 
     new_covid = a[0].get_text()
     add_covid = a[1].get_text()
@@ -25,7 +33,7 @@ def covid_19() :
     print("누적 확진자 :", add_covid)
     #print(type(new_covid))
     #print(type(add_covid))p
-    return new_covid, add_covid
+    return date_data, new_covid, add_covid
 #==========================================================
 
 #이벤트 텍스트 크롤링=======================================
@@ -62,8 +70,8 @@ def event_text(month) :
             
             #이미지
             image = item.select_one("div.imgs > a")
-            data_link  = image["href"]
-            image_link = image.img["src"]
+            data_link  = 'https://www.gangwon.to/'+ image["href"]
+            image_link = 'https://www.gangwon.to/'+ image.img["src"]
             
             #기간,장소
             place = item.select('dd')
@@ -94,8 +102,9 @@ def event_text(month) :
     return allData
 #==========================================================
 
-    
+
 #covid_19()
+"""
 event_list = []
 month_list = [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ]
 for month in month_list :
@@ -116,8 +125,10 @@ print(df)
 
 df.to_csv('event.csv',index=False, encoding='euc-kr')
 """
-new, add= covid_19()
+
+
+date, new, add = covid_19()
 print(type(new))
-"""
+
 
 

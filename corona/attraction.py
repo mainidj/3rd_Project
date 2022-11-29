@@ -47,7 +47,7 @@ def attraction():
             
             #이미지
             image = item.select_one("section.imgs>ul>li")
-            image_link = image.img["src"]
+            image_link = 'https://www.gangwon.to' + image.img["src"]
 
             data = {"title" : data_title, "price" : place_data, "image" : image_link}
             allData.append(data)
@@ -61,4 +61,4 @@ df = pd.DataFrame(data)
 print(type(df))
 print(df)
 
-#df.to_csv('attraction.csv',index=False, encoding='euc-kr')
+df.to_csv('attraction.csv',index=False, encoding='euc-kr')
